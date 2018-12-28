@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dse.sso</groupId>
+  <artifactId>dse-sso-center</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>dse-sso-core</module>
+  	<module>dse-sso-server</module>
+  </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.test.skip>true</maven.test.skip>
+        <spring-boot.version>1.5.18.RELEASE</spring-boot.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+      <!--  <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <jedis.version>2.9.0</jedis.version>
+
+        <spring-boot.version>1.5.18.RELEASE</spring-boot.version>
+        <spring.version>4.3.20.RELEASE</spring.version>-->
+
+    </properties>
+
+    <developers>
+        <developer>
+            <id>yulang</id>
+            <name>yulang</name>
+            <email>791076963@qq.com</email>
+            <url>https://github.com/yulang1992</url>
+        </developer>
+    </developers>
+
+</project>

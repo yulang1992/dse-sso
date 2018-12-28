@@ -1,0 +1,65 @@
+server:
+  port: 8011
+  context-path: /sso
+##资源信息配置
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+## freemarker
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    charset: utf-8
+    request-context-attribute: request
+    settings:
+      number_format : 0.##########
+##druid驱动配置信息
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@10.100.50.91:1521:orcl
+    username: sl_szy_gd_extra
+    password: gdextra
+# #druid连接池的配置信息
+    initialSize:  5
+    minIdle: 5
+    maxActive : 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  redis:
+    host: 10.100.50.91
+    port: 6379
+    password: admin
+dse:
+   sso :
+     redis :
+       address : redis://dse:admin@10.100.50.91:6379/0
+       password : admin
+       expireMinite : 1440
+log:
+  path: dse-sso-logs
+mybatis:
+  # 指定全局配置文件位置
+ # config-location:  classpath:mybatis/mybatis-config.xml
+  # 指定sql映射文件位置
+  mapper-locations:  classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.dse.sso.core.model
+  configuration:
+    map-underscore-to-camel-case: true
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+logging:
+  level: debug
