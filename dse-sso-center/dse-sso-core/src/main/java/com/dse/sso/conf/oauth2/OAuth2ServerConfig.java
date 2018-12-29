@@ -28,8 +28,6 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 public class OAuth2ServerConfig {
 
     private static final String DEMO_RESOURCE_ID = "order";
-    private static final String USER_RESOURCE_ID = "user";
-    private static final String CART_RESOURCE_ID = "cart";
 
     private static final Integer accessTokenValiditySeconds=60 * 60 * 2 ;   //token有效期两小时
 
