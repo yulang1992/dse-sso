@@ -31,8 +31,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected UserDetailsService userDetailsService(){
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         //指定认证的用户
-        manager.createUser(User.withUsername("zhangna").password("19930827").authorities("USER").build());
-        manager.createUser(User.withUsername("yulang").password("1992514").authorities("USER").build());
+        manager.createUser(User.withUsername("zhangna").password("123456").authorities("USER").build());
+        manager.createUser(User.withUsername("yulang").password("123456789").authorities("USER").build());
         return manager;
     }
 
